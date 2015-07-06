@@ -1,9 +1,7 @@
 /**
  * Module dependencies
  */
-var Mincer = require('mincer');
 var _ = require('lodash');
-
 
 /**
  * Mincer Hook
@@ -33,6 +31,13 @@ module.exports = function Mailin (sails) {
 			}
 		},
 
+		routes: {
+
+			before: {
+
+			}
+		},
+
 
 		/**
 		 * @param  {Function} cb
@@ -42,21 +47,10 @@ module.exports = function Mailin (sails) {
 
 			if(!sails.config[self.configKey].enable) return cb();
 
-
-			if (!sails.hooks.http) {
-				return cb(new Error('Cannot use the `mincer` hook without the `http` hook.'));
-			}
-
 			var onInit = sails.config[self.configKey].onInit;
 			var opts = _.omit(sails.config[self.configKey], "enable", "onInit");
 
-			// If http hook is enabled, wait until the http hook is loaded
-			// before trying to attach the socket.io server to our underlying
-			// HTTP server.
-			sails.after('hook:http:loaded', function (){
-				// Register connect-assets middleware
-				sails.hook.http.app.use(require('connect-assets')(opts, onInit));
-			});
+			this.routes.before['all /*'] = connectAssets = require('connect-assets')(opts, onInit);
 
 			cb();
 		}
