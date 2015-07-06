@@ -3,7 +3,6 @@
  */
 var Mincer = require('mincer');
 var _ = require('lodash');
-var util = require('util');
 
 
 /**
