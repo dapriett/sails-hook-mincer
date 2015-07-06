@@ -1,4 +1,4 @@
-This provides a sails hook integrating the Sprokets inspired asset compiler [Mincer](https://github.com/nodeca/mincer).  This uses the the [Connect-Assets](https://github.com/adunkman/connect-assets) module for integrating mincer, registering it as a http middleware.  It supports everything [mincer](https://github.com/nodeca/mincer) supports: Coffeescript, SCSS, LESS, Stylus, Jade, HAML, and EJS.
+This provides a sails hook integrating the Sprokets inspired asset compiler [Mincer](https://github.com/nodeca/mincer).  This uses the the [Connect-Assets](https://github.com/adunkman/connect-assets) module for integrating mincer.  It supports everything [mincer](https://github.com/nodeca/mincer) supports: Coffeescript, SCSS, LESS, Stylus, Jade, HAML, and EJS.
 
 [![NPM version][npm-image]][npm-url] [![Dependency status][david-dm-image]][david-dm-url]
 [npm-url]: https://npmjs.org/package/sails-hook-mincer
