@@ -1,0 +1,26 @@
+{
+  "name": "sails-hook-mincer",
+  "version": "0.1.0",
+  "description": "Sails hook for integrating mincer assets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dapriett/sails-hook-mincer.git"
+  },
+  "homepage": "https://github.com/dapriett/sails-hook-mincer",
+  "sails": {
+    "isHook": true
+  },
+  "devDependencies": {
+    "sails": "~0.11.0"
+  },
+  "author": "Dan Prietti",
+  "license": "ISC",
+  "dependencies": {
+    "connect-assets": "^4.8.0",
+    "lodash": "^3.10.0"
+  }
+}
