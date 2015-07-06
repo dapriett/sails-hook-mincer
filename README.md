@@ -11,20 +11,6 @@ This provides a sails hook integrating the Sprokets inspired asset compiler [Min
 $ npm install sails-hook-mincer --save
 ```
 
-## Usage
-
-### 1. configure .sailsrc
-
-```json
-{
-  "generators": {
-    "modules": {
-      "mincer-api": "sails-hook-mincer/generator"
-    }
-  }
-}
-```
-
 ## Configuration
 Simply create a `config/mincer.js` to modify the options
 ```js
