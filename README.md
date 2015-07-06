@@ -22,11 +22,40 @@ $ npm install sails-hook-mincer --save
 
 ---
 
+## Setup
+
+You'll need to modify some of the built in sails tasks to disable it's builtin assets compiler and linker
+
+Dev Environment: `tasks/register/default.js`
+```
+  grunt.registerTask('default', function() {
+    // Do Nothing
+    return;
+  });
+
+```
+
+Prod Environment: `tasks/register/prod.js`
+```
+  grunt.registerTask('prod', function() {
+  // Do Nothing
+    return;
+  });
+```
+
+// Run this task before starting in production
+  grunt.registerTask('production', [
+    'clean',
+    'shell:precompile'
+  ]);
+
+---
+
 ## Configuration
 Simply create a `config/mincer.js` to modify the options
 ```js
 module.exports.mincer = {
-  // Enable/Disable mincer
+  // Enable/Disable mincer - Default: true
 	enable: true,
 	
 	// Add a custom on initialize function to setup mincer
